@@ -1,0 +1,16 @@
+# /etc/sudoers.d/zabbix-extensions:
+# sudo(8) configuration for Zabbix checks.
+
+User_Alias USER_LINUX = %USER_LINUX%
+User_Alias USER_OSX = %USER_OSX%
+
+# Linux
+
+USER_LINUX	ALL=NOPASSWD: \
+			/usr/local/sbin/backup-status
+
+# OS X
+
+USER_OSX	ALL=NOPASSWD: \
+			/usr/bin/stat, \
+			/usr/bin/tmutil
