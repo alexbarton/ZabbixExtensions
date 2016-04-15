@@ -54,6 +54,8 @@ refresh_sudo() {
 for host in "$@"; do
 	ax_msg - "$host ..."
 
+	ssh root@$host mkdir -p /usr/local/etc/zabbix/zabbix_agentd.conf.d
+
 	# Zabbix agent configuration
 	out=$(rsync -rt --delete --log-format=%f -e ssh --exclude Makefile \
 	 "$BASE_DIR/etc/zabbix_agentd.conf.d/" \
