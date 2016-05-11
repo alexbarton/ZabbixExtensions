@@ -84,7 +84,7 @@ for host in "$@"; do
 			ax_msg 1 "Ok, updated sudo configuration."
 			refresh_sudo "$host"
 		else
-			ax_msg 0 "Ok, no for sudo configuration."
+			ax_msg 0 "Ok, no changes for sudo configuration."
 		fi
 	else
 		ax_msg 2 "Failed to sync sudo configuration to $host!"
